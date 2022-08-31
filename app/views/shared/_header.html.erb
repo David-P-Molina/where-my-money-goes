@@ -36,10 +36,16 @@
   <!-- Hero content: will be in the middle -->
   <div class="hero-body">
     <div class="has-text-centered">
+    
+    <% if content_for(:title) %>
+      <span class="title"><%= yield :title %></span>
+      <% else %>
       <p>
         <span class="title">MoneyBudget</span><br />
         <span class="subtitle"> see where your money goes</span>
       </p>
+    <% end %>
+    
     </div>
   </div>
 

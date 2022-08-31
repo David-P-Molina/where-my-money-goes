@@ -1,12 +1,14 @@
-<h1>Budgets</h1>
+<% content_for :title do %>
+  MoneyBudget <br /> <span class="subtitle"><%= DateTime.now %></span>
+<% end %>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Starting amount</th>
-      <th>Ending amount</th>
+      <th>Starting Amount</th>
+      <th>Ending Amount</th>
       <th>Start</th>
       <th>End</th>
       <th colspan="3"></th>
