@@ -8,4 +8,11 @@ class Budget < ApplicationRecord
     validates :name, uniqueness: true
 
     #Custom Validations
+    validate :starting_amount_is_greater_than_zero
+
+    def starting_amount_is_greater_than_zero
+        if starting_amount < 0
+            errors.add(:starting_amount, "can't be smaller than zero")
+        end
+    end
 end
