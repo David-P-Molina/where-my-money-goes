@@ -3,7 +3,7 @@ class Budget < ApplicationRecord
     has_many :purchases, class_name: "purchase", foreign_key: "reference_id"
 
     validates :name, :description, :starting_amount, :start, :end , presence: true
-    validates :starting_amount , numericality: true
+    validates :starting_amount, :ending_amount, numericality: true
     validates :ending_amount, absence: true
     validates :name, uniqueness: true
 
@@ -12,7 +12,7 @@ class Budget < ApplicationRecord
 
     def starting_amount_is_greater_than_zero
         if starting_amount < 0
-            errors.add(:starting_amount, "can't be smaller than zero")
+            errors.add(:starting_amount, "can't be smaller than zero.")
         end
     end
 end
